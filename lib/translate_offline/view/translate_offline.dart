@@ -2,21 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
-import 'package:learn_spanish/translate_offline/view/translate_offline.dart';
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+import 'package:learn_spanish/speech/view/speech.dart';
+class HomeSecond extends StatelessWidget {
+  const HomeSecond({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+
+
       body: Stack(
         children: [
+          Positioned.fill(
+            child: Image.asset(
+              "images/background.png",
+              fit: BoxFit.cover,      // cover entire screen
+            ),
+          ),
+
           Positioned(
-            top: 54,
-            left: 18,
+            top: 80,
+            left: 80,
             child: Text(
-              "The most popular \n Spanish-English dictionary",
+              "Translate offline",
               textAlign: TextAlign.center,
               style: context.textTheme.bodyLarge?.copyWith(
                 fontSize: 25,
@@ -50,11 +58,26 @@ class HomeView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: context.screenHeight * 0.1),
+                   ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                       fixedSize: Size(100, 40),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(12)
+                       )
+                     ),
+                       onPressed: (){}, child: Row(
+                     children: [
+                       Icon(CupertinoIcons.wifi_slash,size: 16,),
+                       Text(" offline",style: context.textTheme.bodyLarge?.copyWith(
+                         fontSize: 10
+                       ),)
+                     ],
+                   )),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "dog",
+                            "great",
                             style: context.textTheme.bodyLarge?.copyWith(
                               fontSize: 40,
                               fontWeight: FontWeight.w900,
@@ -73,7 +96,7 @@ class HomeView extends StatelessWidget {
 
                         children: [
                           Text(
-                            "perro",
+                            "chevere",
                             style: context.textTheme.bodyLarge?.copyWith(
                               fontSize: 40,
                               color: Colors.blue,
@@ -91,7 +114,7 @@ class HomeView extends StatelessWidget {
                       SizedBox(height: 20),
 
                       Text(
-                        "MASCULINE NOUN",
+                        "ADJECTIVE",
                         style: context.textTheme.bodyLarge?.copyWith(
                           fontSize: 12,
                           color: Colors.grey,
@@ -99,7 +122,7 @@ class HomeView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "(animal)",
+                        "(colloquial) (very good)",
                         style: context.textTheme.bodyLarge?.copyWith(
                           fontSize: 18,
                           color: Colors.green,
@@ -107,7 +130,7 @@ class HomeView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "perro",
+                        "chevere",
                         style: context.textTheme.bodyLarge?.copyWith(
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
@@ -115,25 +138,20 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Text(
-                        "I walk the dog three times",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 18,
-                        ),
-                      ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
 
                         children: [
                           Text(
-                            "a day.",
+                            "The movie was great.",
                             style: context.textTheme.bodyLarge?.copyWith(
                               fontSize: 18,
                             ),
                           ),
                           SizedBox(width: 8),
                           Text(
-                            "—— Saco al perro",
+                            "—— La",
                             style: context.textTheme.bodyLarge?.copyWith(
                               fontSize: 18,
                               color: Colors.grey,
@@ -142,7 +160,7 @@ class HomeView extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        "tres veces al dia",
+                        "pelicula estaba chevere",
                         style: context.textTheme.bodyLarge?.copyWith(
                           fontSize: 18,
                           color: Colors.grey,
@@ -156,44 +174,17 @@ class HomeView extends StatelessWidget {
           ),
 
           /// Circle Avatar
-      Positioned(
-        top: 180,
-        right: 110,
-        child: InkWell(
-          onTap: ()=>Get.to(()=>HomeSecond()),
-          child: Container(
-            decoration:  BoxDecoration(
-                shape: BoxShape.circle,
-              border: Border(
-                bottom: BorderSide(color: Colors.grey, width: 5), // example color
-                right: BorderSide(color: Colors.grey, width: 10),
-              ),
-            ),
-            child: Card(
-              margin: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(color: Colors.white, width: 6), // full border
-                borderRadius: BorderRadius.all(Radius.circular(100)), // circle shape
-              ),
-              child:  CircleAvatar(
-                radius: 60,
-                backgroundColor: Colors.cyan.shade50,
-                child: ClipOval(
+          Positioned(
+            top: 140,
+            right: 100,
+            child: InkWell(
+                onTap: ()=>Get.to(()=>Speech()),
+                
+                child: Image.asset("images/plane.png",height: 150,))
 
-                  child: Image.asset(
-                    "images/Dog.png",
-                    width: 240,
-                    height: 110,
+          )
 
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      )
-
-      ],
+        ],
       ),
     );
   }
