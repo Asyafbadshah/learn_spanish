@@ -170,9 +170,9 @@ class _Image extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       top: 180,
-      right: 110,
+      right: 127,
       child: InkWell(
-        onTap: () => Get.to(() => HomeSecond()),
+        onTap: () => Get.to(() => TranslateOffline()),
         child: Container(
           decoration: imageContainerDecoration,
           child: Card(

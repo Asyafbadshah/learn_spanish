@@ -6,8 +6,8 @@ import '../../../core/theme/theme_color.dart';
 import '../../../core/theme/theme_style.dart';
 import '../../speech/view/speech.dart';
 
-class HomeSecond extends StatelessWidget {
-  const HomeSecond({super.key});
+class TranslateOffline extends StatelessWidget {
+  const TranslateOffline({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class HomeSecond extends StatelessWidget {
        _Box(),
 
           Positioned(
-            top: 140,
-            right: 100,
+            top: 150,
+            right: 125,
             child: InkWell(
                 onTap: ()=>Get.to(()=>Speech()),
                 
