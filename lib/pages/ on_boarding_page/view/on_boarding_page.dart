@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:learn_spanish/pages/home/view/home_view.dart';
 
 import '../../../core/theme/theme_color.dart';
 import '../../../core/theme/theme_style.dart';
@@ -39,6 +40,7 @@ class OnboardingController extends GetxController {
       );
     } else {
       // TODO: Navigate to home or login
+      Get.offAll(()=>HomeView());
     }
   }
 
