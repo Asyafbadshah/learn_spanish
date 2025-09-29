@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
-import 'package:learn_spanish/interactive_grammar_lessons/view/interactive_grammar_lessons.dart';
+import '../../../core/theme/theme_color.dart';
+import '../../../core/theme/theme_style.dart';
+import '../../interactive_grammar_lessons/view/interactive_grammar_lessons.dart';
 
-import '../../core/theme/theme_color.dart';
-import '../../core/theme/theme_style.dart';
 
 class WordOfTheDay extends StatelessWidget {
   const WordOfTheDay({super.key});
@@ -28,16 +28,16 @@ class WordOfTheDay extends StatelessWidget {
                 ),
               ),
             ),
-            _Box()
-           /* Positioned(
-                top: 140,
-                right: 100,
+            _Box(),
+            Positioned(
+                top: 130,
+                right: 145,
                 child: InkWell(
 
 
-                    child: Image.asset("images/plane.png",height: 150,))
+                    child: Image.asset("images/wordoftheday.png",height: 70,))
 
-            )*/
+            )
           ],
         ),
       ),
@@ -89,7 +89,7 @@ class _Box extends StatelessWidget {
                     width: context.screenWidth,
                     color:homeBackGroundColor,
                     child: Center(
-                      child: Image.asset("images/school-bag (4).png", height: context.screenHeight*0.15
+                      child: Image.asset("images/bag.png", height: context.screenHeight*0.15
                         ,),
                     ),
                   ),

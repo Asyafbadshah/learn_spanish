@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
 import 'package:learn_spanish/core/theme/theme_color.dart';
-import 'package:learn_spanish/translate_offline/view/translate_offline.dart';
 
-import '../../core/theme/theme_style.dart';
+import '../../../core/theme/theme_style.dart';
+import '../../translate_offline/view/translate_offline.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

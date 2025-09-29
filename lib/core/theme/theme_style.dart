@@ -44,3 +44,17 @@ final ShapeBorder lessonCardStyle= RoundedRectangleBorder(
     topRight: Radius.circular(20),
   ),
 );
+final ButtonStyle onBoardingButton=ElevatedButton.styleFrom(
+  backgroundColor:speakerIconColor,
+  padding: const EdgeInsets.symmetric(vertical: 16),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+);
+final ButtonStyle getStartedButton=ElevatedButton.styleFrom(
+  backgroundColor: speakerIconColor,
+  padding: const EdgeInsets.symmetric(vertical: 16),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+);

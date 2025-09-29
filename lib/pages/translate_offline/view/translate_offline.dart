@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
-import 'package:learn_spanish/speech/view/speech.dart';
+import '../../../core/theme/theme_color.dart';
+import '../../../core/theme/theme_style.dart';
+import '../../speech/view/speech.dart';
 
-import '../../core/theme/theme_color.dart';
-import '../../core/theme/theme_style.dart';
 class HomeSecond extends StatelessWidget {
   const HomeSecond({super.key});
 

@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
 import 'package:learn_spanish/core/theme/theme_color.dart';
 import 'package:learn_spanish/core/theme/theme_style.dart';
-import 'package:learn_spanish/word_of_the_day/view/word_of_the_day.dart';
+
+import '../../word_of_the_day/view/word_of_the_day.dart';
+
 
 class Speech extends StatelessWidget {
    const Speech({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:learn_spanish/home/view/home_view.dart';
+import 'package:learn_spanish/pages/get_starte/view/get_starte.dart';
+
 
 
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomeView(),
+      home: WelcomePage(),
     );
   }
 }

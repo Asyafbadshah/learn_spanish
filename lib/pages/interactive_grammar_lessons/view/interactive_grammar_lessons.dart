@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
-
-import '../../core/theme/theme_color.dart';
-import '../../core/theme/theme_style.dart';
+import '../../../core/theme/theme_color.dart';
+import '../../../core/theme/theme_style.dart';
+import '../../word_of_the_day/view/word_of_the_day.dart';
 import '../widget/lesson_widget.dart';
-
 
 class InteractiveGrammarLessons extends StatelessWidget {
   const InteractiveGrammarLessons({super.key});
@@ -14,13 +12,9 @@ class InteractiveGrammarLessons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-backgroundColor: Colors.pink.shade50,
+      backgroundColor: Colors.pink.shade50,
       body: Stack(
-
         children: [
-
-
           Positioned(
             top: 70,
             left: 10,
@@ -34,23 +28,22 @@ backgroundColor: Colors.pink.shade50,
             ),
           ),
 
-       _Box(),
+          _Box(),
 
-          /// Circle Avatar
-          // Positioned(
-          //     top: 115,
-          //     right: 60,
-          //     child: InkWell(
-          //         onTap: ()=>Get.to(()=>WordOfTheDay()),
-          //         child: Image.asset("images/rewareded.png",height: 230,))
-          //
-          // )
-
+          Positioned(
+            top: 115,
+            right: 115,
+            child: InkWell(
+              onTap: () => Get.to(() => WordOfTheDay()),
+              child: Image.asset("images/pngwing.png", height: 140),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
 class _Box extends StatelessWidget {
   const _Box();
 
@@ -75,15 +68,17 @@ class _Box extends StatelessWidget {
 
                 SizedBox(
                   height: context.screenHeight * 0.2,
-                  width: context.screenWidth*0.8,
+                  width: context.screenWidth * 0.8,
                   child: Card(
-                    shape:lessonCardStyle,
+                    shape: lessonCardStyle,
                     color: lessonBoxColor,
                     child: Center(
                       child: Padding(
-                        padding:  EdgeInsets.only(top: 8.0),
-                        child: Image.asset("images/ribbit.png", height: context.screenHeight*0.25
-                          ,),
+                        padding: EdgeInsets.only(top: 8.0),
+                        child: Image.asset(
+                          "images/ribbit.png",
+                          height: context.screenHeight * 0.25,
+                        ),
                       ),
                     ),
                   ),
@@ -91,19 +86,14 @@ class _Box extends StatelessWidget {
 
                 Text(
                   "Cardinal Number",
-                  style: context.textTheme.bodyLarge?.copyWith(
-                    fontSize: 25,
-
-                  ),
+                  style: context.textTheme.bodyLarge?.copyWith(fontSize: 25),
                 ),
-                Expanded(child: ClickableSteps())
-
+                Expanded(child: ClickableSteps()),
               ],
             ),
           ),
         ),
       ),
-
     );
   }
 }
