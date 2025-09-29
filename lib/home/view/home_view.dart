@@ -2,14 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_spanish/core/extension/extension.dart';
+import 'package:learn_spanish/core/theme/theme_color.dart';
 import 'package:learn_spanish/translate_offline/view/translate_offline.dart';
+
+import '../../core/theme/theme_style.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: homeBackGroundColor,
       body: Stack(
         children: [
           Positioned(
@@ -24,176 +28,164 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ),
+          _Box(),
+          _Image(),
+        ],
+      ),
+    );
+  }
+}
 
-          Positioned(
-            bottom: 0.1,
-            left: 10,
-            child: SizedBox(
-              height: context.screenHeight * 0.67,
-              width: context.screenWidth * 0.95,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: Colors.blue.withValues(alpha: 0.07), // border color
-                    width: 6, // border width
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+class _Box extends StatelessWidget {
+  const _Box();
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 0.1,
+      left: 10,
+      child: SizedBox(
+        height: context.screenHeight * 0.67,
+        width: context.screenWidth * 0.95,
+        child: Card(
+          shape: cardStyle,
+          elevation: 4,
+          color: kWhite,
+          child: SizedBox.expand(
+            // 👈 force column to expand
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: context.screenHeight * 0.1),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "dog",
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(
+                      CupertinoIcons.speaker_3,
+                      size: 30,
+                      color: speakerIconColor,
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                    Text(
+                      "perro",
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        fontSize: 40,
+                        color: speakerIconColor,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(
+                      CupertinoIcons.speaker_3,
+                      color: speakerIconColor,
+                      size: 30,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+
+                Text(
+                  "MASCULINE NOUN",
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    fontSize: 12,
+                    color: textColor,
                   ),
                 ),
-                elevation: 4,
-                color: Colors.white,
-                child: SizedBox.expand(
-                  // 👈 force column to expand
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(height: context.screenHeight * 0.1),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "dog",
-                            style: context.textTheme.bodyLarge?.copyWith(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          SizedBox(width: 8),
-                          Icon(
-                            CupertinoIcons.speaker_3,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-
-                        children: [
-                          Text(
-                            "perro",
-                            style: context.textTheme.bodyLarge?.copyWith(
-                              fontSize: 40,
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          SizedBox(width: 8),
-                          Icon(
-                            CupertinoIcons.speaker_3,
-                            color: Colors.blue,
-                            size: 30,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
-
-                      Text(
-                        "MASCULINE NOUN",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 12,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "(animal)",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 18,
-                          color: Colors.green,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "perro",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.blue,
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        "I walk the dog three times",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-
-                        children: [
-                          Text(
-                            "a day.",
-                            style: context.textTheme.bodyLarge?.copyWith(
-                              fontSize: 18,
-                            ),
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            "—— Saco al perro",
-                            style: context.textTheme.bodyLarge?.copyWith(
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "tres veces al dia",
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          fontSize: 18,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
+                SizedBox(height: 10),
+                Text(
+                  "(animal)",
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    fontSize: 18,
+                    color: seasonsIconColor,
                   ),
                 ),
-              ),
+                SizedBox(height: 10),
+                Text(
+                  "perro",
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w900,
+                    color: speakerIconColor,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "I walk the dog three times",
+                  style: context.textTheme.bodyLarge?.copyWith(fontSize: 18),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                    Text(
+                      "a day.",
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        fontSize: 18,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      "—— Saco al perro",
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        fontSize: 18,
+                        color: textColor,
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  "tres veces al dia",
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    fontSize: 18,
+                    color: textColor,
+                  ),
+                ),
+              ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
 
-          /// Circle Avatar
-      Positioned(
-        top: 180,
-        right: 110,
-        child: InkWell(
-          onTap: ()=>Get.to(()=>HomeSecond()),
-          child: Container(
-            decoration:  BoxDecoration(
-                shape: BoxShape.circle,
-              border: Border(
-                bottom: BorderSide(color: Colors.grey, width: 5), // example color
-                right: BorderSide(color: Colors.grey, width: 10),
-              ),
-            ),
-            child: Card(
-              margin: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(color: Colors.white, width: 6), // full border
-                borderRadius: BorderRadius.all(Radius.circular(100)), // circle shape
-              ),
-              child:  CircleAvatar(
-                radius: 60,
-                backgroundColor: Colors.cyan.shade50,
-                child: ClipOval(
+class _Image extends StatelessWidget {
+  const _Image();
 
-                  child: Image.asset(
-                    "images/Dog.png",
-                    width: 240,
-                    height: 110,
-
-                  ),
-                ),
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 180,
+      right: 110,
+      child: InkWell(
+        onTap: () => Get.to(() => HomeSecond()),
+        child: Container(
+          decoration: imageContainerDecoration,
+          child: Card(
+            margin: EdgeInsets.zero,
+            shape:imageCardDecoration,
+            child: CircleAvatar(
+              radius: 60,
+              backgroundColor:imageBackGroundColor,
+              child: ClipOval(
+                child: Image.asset("images/Dog.png", width: 240, height: 110),
               ),
             ),
           ),
         ),
-      )
-
-      ],
       ),
     );
   }
